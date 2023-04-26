@@ -13,8 +13,8 @@ public:
 	{
 		this->id;
 		this->position;
-		
-		
+
+
 		this->lastname;    // фамилия
 		this->firstname;   // имя
 		this->patronymic;  // отчество
