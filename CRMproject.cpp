@@ -30,11 +30,29 @@
 
 using namespace std;
 int main()
+
 {
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
     setlocale(LC_ALL, "Rus");
 
     DataBase db;    // инициализация объекта db класса DataBase, применяется без db.connectDb(), если вместо void connect используется конструктор
     //db.connectDb(); // обращение объекта к методу класса DataBase, когда используется void connect
+
+    string name{};
+    string lastName{};
+    string patronymic{};
+    //int position{};
+
+    cin >> name;
+    cin >> lastName;
+    cin >> patronymic;
+    //cin >> position;
+
+    string sqlQuery = "insert into `users` (`lastName`,`firstName`,`patronymic`) values('" + name + "','" + lastName + "','" + patronymic + "')";
+    
+    db.Query(sqlQuery);//вызов метода Query (запрос к базе данных) класса DataBase 
+
 
     ////соединение с базой данный MySQL и вывод оттуда данных
     //cout << "Вывод значений базы данных crmbase: " << "\n";
