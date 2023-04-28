@@ -26,6 +26,7 @@
 #include <mysql.h>
 #include "Header.h"
 #include "DataBase.h"
+//#include <mysqlx/xdevapi.h>
 
 
 using namespace std;
@@ -42,14 +43,14 @@ int main()
     string name{};
     string lastName{};
     string patronymic{};
-    //int position{};
+    int position{};
 
     cin >> name;
     cin >> lastName;
     cin >> patronymic;
-    //cin >> position;
+    cin >> position;
 
-    string sqlQuery = "insert into `users` (`lastName`,`firstName`,`patronymic`) values('" + name + "','" + lastName + "','" + patronymic + "')";
+    string sqlQuery = "insert into `users` (`lastName`,`firstName`,`patronymic`,`position`) values('" + name + "','" + lastName + "','" + patronymic + "'," + to_string(position) + ")";
     
     db.Query(sqlQuery);//вызов метода Query (запрос к базе данных) класса DataBase 
 
