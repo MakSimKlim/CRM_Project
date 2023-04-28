@@ -26,6 +26,7 @@
 #include <mysql.h>
 #include "Header.h"
 #include "DataBase.h"
+#include <string>
 //#include <mysqlx/xdevapi.h>
 
 
@@ -45,9 +46,13 @@ int main()
     string patronymic{};
     int position{};
 
+    cout << "Введите фамилию:" << "\n";
     cin >> name;
+    cout << "Введите имя:" << "\n";
     cin >> lastName;
+    cout << "Введите отчество:" << "\n";
     cin >> patronymic;
+    cout << "Введите номер группы прав доступа:" << "\n";
     cin >> position;
 
     string sqlQuery = "insert into `users` (`lastName`,`firstName`,`patronymic`,`position`) values('" + name + "','" + lastName + "','" + patronymic + "'," + to_string(position) + ")";
